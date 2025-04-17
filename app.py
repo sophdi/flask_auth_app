@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # Ініціалізація Flask додатку
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ваш-секретний-ключ'
+app.config['SECRET_KEY'] = '98d263e3b5fc7e2409cf56eb12b5003e'  # Використовуємо сильний секретний ключ
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -48,7 +48,6 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        remember = True if request.form.get('remember') else False
         
         user = User.query.filter_by(username=username).first()
         
@@ -58,7 +57,7 @@ def login():
             return redirect(url_for('login'))
         
         # Якщо все правильно, авторизуємо користувача
-        login_user(user, remember=remember)
+        login_user(user)
         return redirect(url_for('dashboard'))
     
     return render_template('login.html')
