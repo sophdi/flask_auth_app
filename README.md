@@ -4,21 +4,26 @@ A lightweight user authentication and authorization web application built with F
 
 ## Features
 
-- User registration with email verification
-- Secure authentication system
-- Protected routes for authenticated users only
-- Password hashing for enhanced security
-- Simple, responsive UI built with Bootstrap 5
-
+- User registration with validation
+- Secure authentication using Flask-Login
+- Password hashing with Werkzeug
+- Route protection with `@login_required`
+- User session management
+- Simple, responsive interface built with Bootstrap 5
 
 ## Technologies Used
 
-- Python 3.13.2
-- Flask
-- Flask-Login
-- Flask-SQLAlchemy
-- SQLite
-- Bootstrap 5
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+ ![Flask](https://img.shields.io/badge/Flask-lightgrey?logo=flask)
+ ![Flask-Login](https://img.shields.io/badge/Flask--Login-black?logo=flask)
+ ![Flask-SQLAlchemy](https://img.shields.io/badge/Flask--SQLAlchemy-darkgreen?logo=sqlite&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
+![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white)
+
+## Preview
+
+![App Screenshot](assets/webapp.png)
+
 
 ## Installation
 
