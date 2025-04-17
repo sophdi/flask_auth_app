@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Головна сторінка{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="mt-5">Ласкаво просимо до системи автентифікації</h1>
+    <p class="lead">Тут ви можете зареєструватися або увійти до системи.</p>
+    {% if not current_user.is_authenticated %}
+    <div class="mt-4">
+        <a href="{{ url_for('login') }}" class="btn btn-primary me-2">Увійти</a>
+        <a href="{{ url_for('signup') }}" class="btn btn-outline-primary">Зареєструватися</a>
+    </div>
+    {% else %}
+    <div class="mt-4">
+        <p>Ви вже увійшли як <strong>{{ current_user.username }}</strong></p>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-success">Перейти до Особистого кабінету</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

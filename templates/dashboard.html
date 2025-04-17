@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Особистий кабінет{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="mt-5">Вітаємо, {{ name }}!</h1>
+    <p class="lead">Це ваш особистий кабінет. Ця сторінка доступна тільки авторизованим користувачам.</p>
+    <div class="mt-4">
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Вийти</a>
+    </div>
+</div>
+{% endblock %}
